@@ -55,6 +55,4 @@ module.exports = (app) => {
     // Delete a client with Id
     app.delete('/clients/:id', client.deleteClient);
 
-
-    app.get('/home', project.count);
 }
