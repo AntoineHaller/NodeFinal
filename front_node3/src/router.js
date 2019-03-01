@@ -32,6 +32,47 @@ export default new Router({
       path: '/Projets-edit/:id',
       name: 'Projets-edit',
       component: () => import('./views/ProjectEdit.vue')
+    },
+    {
+      path: '/Salaries',
+      name: 'Salaries',
+      component: () => import('./views/Salaries.vue')
+    },
+    {
+      path: '/Salaries-details/:id',
+      name: 'Salaries-details',
+      component: () => import('./views/SalarieDetail.vue')
+    },
+    {
+      path: '/Salaries/create',
+      name: 'Salaries/create',
+      component: () => import('./views/SalarieNew.vue')
+    },
+    {
+      path: '/Salaries-edit/:id',
+      name: 'Salaries-edit',
+      component: () => import('./views/SalarieEdit.vue')
+    },
+    {
+      path: '/Clients',
+      name: 'Clients',
+      component: () => import('./views/Clients.vue')
+    },
+    {
+      path: '/Clients-details/:id',
+      name: 'Clients-details',
+      component: () => import('./views/ClientDetail.vue')
+    },
+    {
+      path: '/Clients/create',
+      name: 'Clients/create',
+      component: () => import('./views/ClientNew.vue')
+    },
+    {
+      path: '/Clients-edit/:id',
+      name: 'Clients-edit',
+      component: () => import('./views/ClientEdit.vue')
     }
+
   ]
 })

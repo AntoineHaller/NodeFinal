@@ -1,14 +1,14 @@
 <script>
-    const myApiUrl = "http://localhost:3000/projects/";
+    const myApiUrl = "http://localhost:3000/salaries/";
 
     export default {
-        getProjects () {
+        getSalaries () {
             return fetch(myApiUrl)
                 .then ((response) => {
                     return response.json();
                 })
         },
-        createProject(name, desc, startDate, endDate, price, status) {
+        createSalarie(name, firstname, birthDate, adresseRue, adresseVille, adresseCP, tel, mail, position) {
             fetch(myApiUrl, {
                 method:'post',
                 headers: {
@@ -18,11 +18,14 @@
                 body:JSON.stringify(
                     {
                         "name":name,
-                        "desc":desc,
-                        "startDate" : startDate,
-                        "endDate":endDate,
-                        "price": price,
-                        "status": status
+                        "firstname":firstname,
+                        "birthDate" : birthDate,
+                        "adresseRue":adresseRue,
+                        "adresseVille": adresseVille,
+                        "adresseCP": adresseCP,
+                        "tel": tel,
+                        "mail": mail,
+                        "position": position
                     }
                 )
             })
@@ -31,15 +34,15 @@
                     return response.json();
                 })
         },
-        deleteProject(id) {
+        deleteSalarie(id) {
             fetch(myApiUrl + id, {
                 method:'delete',
             })
-            .then((response) => {
-                return response.json();
-            })
+                .then((response) => {
+                    return response.json();
+                })
         },
-        editProject(id, name, desc, startDate, endDate, price, status) {
+        editSalarie(id, name, firstname, birthDate, adresseRue, adresseVille, adresseCP, tel, mail, position) {
             fetch(myApiUrl +id, {
                 method:'put',
                 headers: {
@@ -49,11 +52,14 @@
                 body:JSON.stringify(
                     {
                         "name":name,
-                        "desc":desc,
-                        "startDate" : startDate,
-                        "endDate":endDate,
-                        "price": price,
-                        "status": status
+                        "firstname":firstname,
+                        "birthDate" : birthDate,
+                        "adresseRue":adresseRue,
+                        "adresseVille": adresseVille,
+                        "adresseCP": adresseCP,
+                        "tel": tel,
+                        "mail": mail,
+                        "position": position
                     }
                 )
             })
@@ -62,7 +68,7 @@
                     return response.json();
                 })
         },
-        getProject(id) {
+        getSalarie(id) {
             return fetch(myApiUrl + id)
                 .then((response) => {
                     return response.json();

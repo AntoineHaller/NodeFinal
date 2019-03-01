@@ -1,14 +1,14 @@
 <script>
-    const myApiUrl = "http://localhost:3000/projects/";
+    const myApiUrl = "http://localhost:3000/clients/";
 
     export default {
-        getProjects () {
+        getClients () {
             return fetch(myApiUrl)
                 .then ((response) => {
                     return response.json();
                 })
         },
-        createProject(name, desc, startDate, endDate, price, status) {
+        createClient(businessName, adresseRue, adresseVille, adresseCP, refName, refFirstname, refTel, refMail, secteur) {
             fetch(myApiUrl, {
                 method:'post',
                 headers: {
@@ -17,12 +17,15 @@
                 },
                 body:JSON.stringify(
                     {
-                        "name":name,
-                        "desc":desc,
-                        "startDate" : startDate,
-                        "endDate":endDate,
-                        "price": price,
-                        "status": status
+                        "businessName":businessName,
+                        "adresseRue":adresseRue,
+                        "adresseVille": adresseVille,
+                        "adresseCP": adresseCP,
+                        "refName":refName,
+                        "refFirstname" : refFirstname,
+                        "refTel" : refTel,
+                        "refMail": refMail,
+                        "secteur": secteur,
                     }
                 )
             })
@@ -31,15 +34,15 @@
                     return response.json();
                 })
         },
-        deleteProject(id) {
+        deleteClient(id) {
             fetch(myApiUrl + id, {
                 method:'delete',
             })
-            .then((response) => {
-                return response.json();
-            })
+                .then((response) => {
+                    return response.json();
+                })
         },
-        editProject(id, name, desc, startDate, endDate, price, status) {
+        editClient(id, businessName, adresseRue, adresseVille, adresseCP, refName, refFirstname, refTel, refMail, secteur) {
             fetch(myApiUrl +id, {
                 method:'put',
                 headers: {
@@ -48,12 +51,15 @@
                 },
                 body:JSON.stringify(
                     {
-                        "name":name,
-                        "desc":desc,
-                        "startDate" : startDate,
-                        "endDate":endDate,
-                        "price": price,
-                        "status": status
+                        "businessName":businessName,
+                        "adresseRue":adresseRue,
+                        "adresseVille": adresseVille,
+                        "adresseCP": adresseCP,
+                        "refName":refName,
+                        "refFirstname" : refFirstname,
+                        "refTel" : refTel,
+                        "refMail": refMail,
+                        "secteur": secteur,
                     }
                 )
             })
@@ -62,7 +68,7 @@
                     return response.json();
                 })
         },
-        getProject(id) {
+        getClient(id) {
             return fetch(myApiUrl + id)
                 .then((response) => {
                     return response.json();

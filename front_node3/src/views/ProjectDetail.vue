@@ -7,6 +7,7 @@
                 <h2>Date de fin :{{project.endDate}}</h2>
                 <h2>Prix :{{project.price}}</h2>
                 <h2>Statut :{{project.status}}</h2>
+        <a v-bind:href="'/Projets-edit/' + project._id">Modifier</a>
         <button type="button" name="button" v-on:click="del(project._id)"> Supprimer</button>
 
     </div>

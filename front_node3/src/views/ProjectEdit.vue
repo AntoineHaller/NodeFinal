@@ -20,7 +20,7 @@
             <div class="form-group">
                 Statut <input type="text" v-model="status">
             </div>
-            <button type="button" name="button" v-on:click="edit(name, desc, startDate, endDate, price, status)"> Modifier</button>
+            <button type="button" name="button" v-on:click="edit(id,name, desc, startDate, endDate, price, status)"> Modifier</button>
         </form>
     </div>
 </template>
@@ -37,12 +37,25 @@
                 startDate: "",
                 endDate: "",
                 price: "",
-                status: ""
+                status: "",
+                id: this.$route.params.id
             }
         },
+        created() {
+            ProjectsService.getProject(this.id)
+                .then((data) => {
+                    this.name = data.name;
+                    this.desc = data.desc;
+                    this.startDate = data.startDate;
+                    this.endDate = data.endDate;
+                    this.price = data.price;
+                    this.status = data.status;
+                })
+                .catch(error => {console.log(error)});
+        },
         methods: {
-            edit: function (name, desc, startDate, endDate, price, status) {
-                ProjectsService.editProject(name, desc, startDate, endDate, price, status);
+            edit: function (id, name, desc, startDate, endDate, price, status) {
+                ProjectsService.editProject(id, name, desc, startDate, endDate, price, status);
                 this.$router.push('/Projets');
             }
         }
