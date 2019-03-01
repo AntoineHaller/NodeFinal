@@ -1,17 +1,15 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+
+    <p>ICI IL FAUDRA METTRE LE NOMBRE DE PROJETS/SALARIES/CLIENTS</p>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 
-/* export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-} */
+export default {
+  name: 'home'
+}
 </script>
