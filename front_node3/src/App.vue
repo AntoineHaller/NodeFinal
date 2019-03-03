@@ -27,6 +27,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
+    background-color: #ecf0f1;
   }
   #nav {
     padding: 30px;
@@ -34,7 +35,7 @@
 
   #nav a {
     font-weight: bold;
-    color: #2c3e50;
+    color: white;
   }
 
   #nav a.router-link-exact-active {
