@@ -19,12 +19,20 @@ export default {
 </script>
 
 <style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+
     #header {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
-        color: #2c3e50;
+        background-color: #34495e;
+        color: white;
+        width: 100%;
+        height: auto;
     }
     #nav {
         padding: 30px;
@@ -32,7 +40,7 @@ export default {
 
     #nav a {
         font-weight: bold;
-        color: #2c3e50;
+        color: white;
     }
 
     #nav a.router-link-exact-active {

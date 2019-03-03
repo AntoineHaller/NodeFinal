@@ -1,6 +1,6 @@
 <template>
     <div id="footer">
-        <span>ICI C'EST LE FOOTER</span>
+       <p>© 2019 Copyright Eskander Haller</p>
     </div>
 </template>
 
@@ -14,13 +14,15 @@ export default {
 </script>
 
 <style>
+    #footer p{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        color: #FFF;
+    }
+
     #footer {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
-        font-weight: bolder;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: rebeccapurple;
-        margin-top: 20px;
+        width: 100%;
+        height: auto;
+        background-color: #34495e;
     }
 </style>
